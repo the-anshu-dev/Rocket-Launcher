@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="rocket.css">
+   <title>Rocket Launcher || Code Village</title>
+</head>
+<body>
+    <div class="box">
+        <img src="Logo.png" class="logo">
+        <div class="text">
+            <p>Rocket is Under Maintenance</p>
+            <h1>We're <span>Launching</span> Soon</h1>
+
+            <div class="timer">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+        
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+        
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+        
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+
+
+            <button type="button">Know More</button>
+        </div>
+
+        <img src="rocket.png" class="rocket">
+        <img src="rocket.png" class="rocket1">
+        <img src="rocket.png" class="rocket2">
+
+    </div>
+
+    <script>
+
+        var count = new Date("Jan 31,2022 00:00:00").getTime();
+        var interval = setInterval(function(){
+
+            var now = new Date().getTime();
+            var dis = count - now;
+
+            // to calc. day, hour,min,sec 
+            var days = Math.floor(dis / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((dis % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((dis % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((dis % (1000 * 60)) / 1000);
+
+            // now call by id 
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+
+
+        },1000);
+
+    </script>
+    
+</body>
+</html>
